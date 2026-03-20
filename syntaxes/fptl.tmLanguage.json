@@ -1,0 +1,122 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "fptl",
+	"patterns": [
+		{
+			"include": "#comment"
+		},
+		{
+			"include": "#constant"
+		},
+		{
+			"include": "#keyword"
+		},
+		{
+			"include": "#storage"
+		},
+		{
+			"include": "#string"
+		},
+		{
+			"include": "#support"
+		},
+		{
+			"include": "#variable"
+		}
+	],
+	"repository": {
+		"keyword": {
+			"patterns": [
+				{
+					"name": "keyword.control.fptl",
+					"match": "(\\b(Data|Scheme|Application|Fun)\\b)|%"
+				},
+				{
+					"name": "keyword.control.get.fptl",
+					"match": "\\[[0-9]+\\]"
+				},
+				{
+					"name": "keyword.control.get.for.hower.only",
+					"match": "\\[[n]+\\]"
+				},
+				{
+					"match": "(\\*|=|->|-|,|\\+\\+|\\+|\\.)",
+					"name": "keyword.operator.fptl"
+				}
+			]
+		},
+		"string": {
+			"name": "string.quoted.double.fptl",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.fptl",
+					"match": "\\\\."
+				}
+			]
+		},
+		"comment": {
+			"patterns": [
+				{
+					"name": "comment.block.fptl",
+					"begin": "/\\*",
+					"end": "\\*/"
+				},
+				{
+					"name": "comment.line.double-slash.fptl",
+					"begin": "//",
+					"end": "$"
+				}
+			]
+		},
+		"support": {
+			"patterns": [
+				{
+					"name": "support.type.destructor.fptl",
+					"match": "~c_[A-Za-z]\\w*"
+				},
+				{
+					"name": "support.type.constructor.fptl",
+					"match": "c_[A-Za-z]\\w*"
+				},
+				{
+					"name": "support.function.fptl",
+					"match": "\\b(tupleLen|and|or|xor|equal|nequal|greater|less|gequal|lequal|add|sub|mul|div|mod|abs|sqrt|exp|ln|round|sin|cos|tan|asin|atan|toString|toInt|toReal|cat|search|match|replace|getToken|length|print|printType|readFile|createFile|appendFile|arrayCreate|arrayGet|arraySet|arrayLen|arrayCat|arrayCopy|arrayFromFile|Pi|E|rand)\\b"
+				},
+				{
+					"name": "support.other.fptl",
+					"match": ""
+				}
+			]
+		},
+		"variable": {
+			"patterns": [
+				{
+					"name": "variable.language.fptl",
+					"match": "(@|id|((\\b[A-Za-z]\\w+\\b)(?=[(\\[])))"
+				},
+				{
+					"name": "variable.other.fptl",
+					"match": "(\\b[A-Za-z]+\\w*\\b)|('[A-Za-z]+\\w*)"
+				}
+			]
+		},
+		"storage": {
+			"patterns": []
+		},
+		"constant": {
+			"patterns": [
+				{
+					"match": "[0-9]+",
+					"name": "constant.numeric.fptl"
+				},
+				{
+					"name": "constant.language.fptl",
+					"match": "\\b(true|false)\\b"
+				}
+			]
+		}
+	},
+	"scopeName": "source.fptl"
+}

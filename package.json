@@ -1,0 +1,67 @@
+{
+    "name": "fptl",
+    "displayName": "FPTL-support",
+    "description": "This is an extension for the Functional Parallel Typified Language with syntax highlighting and hints",
+    "version": "0.1.5",
+    "publisher": "somename",
+    "engines": {
+        "vscode": "^1.39.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": ""
+    },
+    "categories": [
+        "Programming Languages",
+        "Snippets"
+    ],
+    "keywords": [
+        "Languages",
+        "tmLanguage",
+        "fptl",
+        "FPTL"
+    ],
+    "main": "./src/extension.js",
+    "activationEvents": [
+        "onLanguage:fptl"
+    ],
+    "icon": "src/images/logo.png",
+    "contributes": {
+        "languages": [
+            {
+                "id": "fptl",
+                "aliases": [
+                    "fptl",
+                    "fptl"
+                ],
+                "extensions": [
+                    ".fptl"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "fptl",
+                "scopeName": "source.fptl",
+                "path": "./syntaxes/fptl.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "fptl",
+                "path": "./snippets/snip.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "extension.runFptl",
+                "title": "Run current FPTL file"
+            },
+            {
+                "command": "extension.infoFptl",
+                "title": "Show quick FPTL info"
+            }
+        ]
+    }
+}

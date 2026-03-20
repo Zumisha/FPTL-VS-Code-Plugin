@@ -1,0 +1,58 @@
+{
+    "new Scheme": {
+        "prefix": "Scheme...",
+        "body": [
+            "Scheme ${1:$TM_FILENAME_BASE}",
+            "{",
+            "\t@ = id;",
+            "\t$0",
+            "}",
+            "",
+            "Application",
+            "% ${1:$TM_FILENAME_BASE}"
+        ],
+        "description": "New Scheme..."
+    },
+    "new Fun": {
+        "prefix": "Fun...",
+        "body": [
+            "Fun $1",
+            "{",
+            "\t@ = id;",
+            "\t$0",
+            "}"
+        ],
+        "description": "New Fun..."
+    },
+    "new Fun[]": {
+        "prefix": "Fun[]...",
+        "body": [
+            "Fun $1[$2]",
+            "{",
+            "\t@ = id;",
+            "\t$0",
+            "}"
+        ],
+        "description": "New Fun[]..."
+    },
+    "new Data[]": {
+        "prefix": "Data[]...",
+        "body": [
+            "Data $1[$2]",
+            "{",
+            "\t$0",
+            "}"
+        ],
+        "description": "New Data[]..."
+    },
+    "If Else statement": {
+		"prefix": "if->",
+		"body": [
+			"${1:True} ->",
+			"\t$2",
+			"\t,",
+			"\t$3"
+		],
+		"description": "If Else Then..."
+	}
+}
